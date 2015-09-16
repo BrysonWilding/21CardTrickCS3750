@@ -1,1 +1,1 @@
-﻿
+﻿//addToColumn( in columnid: int, in Card : Card) : void

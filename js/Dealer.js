@@ -1,1 +1,5 @@
-﻿
+﻿//dealNumber
+
+//deal()
+//revealCard()
+//pickupCards()
