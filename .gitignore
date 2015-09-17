@@ -3,3 +3,9 @@
 *.sln
 *.suo
 /obj
+/node_modules
+/prod
+.idea
+.html
+/less/*.css
+/views/*.html

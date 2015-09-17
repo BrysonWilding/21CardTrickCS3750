@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/BrysonWilding/21CardTrickCS3750/issues"
   },
-  "homepage": "https://github.com/BrysonWilding/21CardTrickCS3750#readme"
+  "homepage": "https://github.com/BrysonWilding/21CardTrickCS3750#readme",
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0"
+  }
 }

@@ -13,6 +13,7 @@
 - Open a terminal window, cd to the project root and do
     - npm install -g jade less gulp
     - This will install jade, less and gulp
+    - then 'npm install' will install all other dependencies
   
 Jade is an HTML templating language, the syntax is here: http://jade-lang.com
 Less is a CSS precompiler, the syntax is here: http://lesscss.org
