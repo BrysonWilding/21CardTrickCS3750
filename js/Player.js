@@ -1,15 +1,9 @@
-﻿//hasSelectedCard(true or false)
+﻿var Player = function(selectedCard){
+    this.selectedCard = selectedCard;
+    this.indicateColumn = function indicateColumn(){
 
-//indicateColumn()]
-//pickCard()
-
-(function Player(){
-    var selectedCard;
-    indicateColumn: function indicateColumn(){
+    };
+    this.pickCard = function pickCard(){
 
     }
-
-    pickCard: function pickCard(){
-
-    }
-})();
+};

@@ -1,5 +1,5 @@
-﻿(function Board(){
-    addToColumn: function addToColumn(columnid, card){
+﻿var Board = function (){
+    this.addToColumn = function addToColumn(columnid, card){
 
     }
-})();
+};

@@ -1,5 +1,5 @@
-﻿(function Dealer(){
-    deal: function deal(){
+﻿var Dealer = function(){
+    this.deal = function deal(){
         var row = 0, col = 0, card = 0;
         for (row = 0; row < 7; row++)
         {
@@ -10,12 +10,12 @@
                 card++;
             }
         }
-    }
-    revealCard: function revealCard(){
+    };
+    this.revealCard = function revealCard(){
+
+    };
+    this.pickupCards = function pickupCards(){
 
     }
-    pickupCards: function pickupCards(){
-
-    }
-});
+};
 
