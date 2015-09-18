@@ -1,3 +1,6 @@
-﻿//id
+﻿(function Column(){
+    var id;
+    addCard: function addCard(card){
 
-//addCard(in card: Card)
+    }
+})();

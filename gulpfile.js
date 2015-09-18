@@ -8,6 +8,12 @@ var concat = require('gulp-concat');
 
 gulp.task('default', ['less', 'jade', 'public', 'js']);
 
+gulp.task('watch', function(){
+    gulp.watch('./js/*.js', ['js']);
+    gulp.watch('./views/*.jade', ['jade']);
+    gulp.watch('./js/*.less', ['less']);
+});
+
 gulp.task('less', function () {
     return gulp.src('./less/*.less')
         .pipe(less())

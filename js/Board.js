@@ -1,1 +1,5 @@
-﻿//addToColumn( in columnid: int, in Card : Card) : void
+﻿(function Board(){
+    addToColumn: function addToColumn(columnid, card){
+
+    }
+})();
