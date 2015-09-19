@@ -3,34 +3,30 @@
     var playCards = [7][3];
     var publicVar = this;
 
-    //initializes a brand new deck and shuffles it
-    function initCards() {
-        /*initialize cards and their types*/
-        cardArray = [];
-        for (var i = 0; i < 4; i++) {
-            var type = "";
-            switch (i) {
-                case 0:
-                    type = "heart";
-                    break;
-                case 1:
-                    type = "diamond";
-                    break;
-                case 2:
-                    type = "spade";
-                    break;
-                default:
-                    type = "club";
-            }
-            for (var j = 1; j <= 13; j++) {
-                cardArray.push(new Card({ suit: type, value: j }))
-            }
+        //initializes a brand new deck and shuffles it
+        function initCards() {
+            /*initialize cards and their types*/
+            this.face = ['1','2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+            this.suit = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+            cardArray = [];
+            for (var j = 1; j <= this.suit.length; j++) {
+                for (var k = 1; k <= this.face.length; k++) {
+                    cardArray.push(new Card(n + 1, this.face[j], this.suit[k]))
+                }
+            }   
+            return cardArray;
         }
         /*end init*/
 
         //shuffle new deck
         publicVar.shuffle();
     }
+
+    //////////////////////////////////////////TODO////////////////////////////
+    //used to select only 21 cards from the deck after it is shuffled
+    //publicVar.randomElements = function () {
+
+    //};
 
     //shuffles the card array
     publicVar.shuffle = function () {
