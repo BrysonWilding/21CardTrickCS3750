@@ -11,7 +11,7 @@
             cardArray = [];
             for (var j = 1; j <= this.suit.length; j++) {
                 for (var k = 1; k <= this.face.length; k++) {
-                    cardArray.push(new Card(n + 1, this.face[j], this.suit[k]))
+                    cardArray.push(new Card(j + 1, this.face[j], this.suit[k]))
                 }
             }   
             return cardArray;
