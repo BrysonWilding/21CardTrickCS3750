@@ -20,7 +20,6 @@
 
         //shuffle new deck
         publicVar.shuffle();
-    }
 
     //////////////////////////////////////////TODO////////////////////////////
     //used to select only 21 cards from the deck after it is shuffled
