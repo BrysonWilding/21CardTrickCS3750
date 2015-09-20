@@ -23,9 +23,9 @@
 
     //////////////////////////////////////////TODO////////////////////////////
     //used to select only 21 cards from the deck after it is shuffled
-    //publicVar.randomElements = function () {
-
-    //};
+    publicVar.randomElements = function () {
+        var randomCards = Math.floor(Math.random() * 21) + 1;
+    };
 
     //shuffles the card array
     publicVar.shuffle = function () {
