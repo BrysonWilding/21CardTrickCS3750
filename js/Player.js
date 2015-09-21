@@ -11,11 +11,9 @@
         // I think this just asks the player to select a card
         // Give a message that says something like "Pick a card, memorize it, maybe write it down"
         // Then it could just say select a column after making your decision.
-        alert("Please pick a card from a column.")
+        alert("Please select the column your card is in.")
         do {
-            alert("You have not selected a card, please pick a card to proceed.");
+            alert("You have not selected a column, please pick a column to proceed.");
         } while (this.selectedCard == false);
-
-        alert("Now, select the column you card is in.");
     }
 };
