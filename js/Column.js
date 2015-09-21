@@ -4,6 +4,5 @@
 
     this.addCard = function addCard(card){
         this.cards.push(card);
-        console.log('Adding cards...')
     };
 };
