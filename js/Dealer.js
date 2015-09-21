@@ -47,7 +47,7 @@
 
         // I decided to empty the cardArray and we will repopulate it below.
         // If someone has a better idea, please make changes.
-        for(var i = 0); i < 21; i++)
+        for(var i = 0; i < 21; i++)
         {
             cardArray.pop();
         }
