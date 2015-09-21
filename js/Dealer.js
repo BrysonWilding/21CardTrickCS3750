@@ -8,7 +8,7 @@
     this.revealCard = function revealCard(){
         // It will be cardArray[10], which is the 11th card.
         // For the view, it is the second column, 4th row.
-
+        pop(cardArray[10]);
     };
     this.pickupCards = function pickupCards(column){
         // This needs to know the column that needs to go in the middle.

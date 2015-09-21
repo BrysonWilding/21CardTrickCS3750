@@ -14,13 +14,6 @@
         return cardArray;
     }
 
-
-    //////////////////////////////////////////TODO////////////////////////////
-    //used to select only 21 cards from the deck after it is shuffled
-    //publicVar.randomElements = function () {
-
-    //};
-
     this.select21 = function(){
         this.shuffle();
         var playcards = [];
