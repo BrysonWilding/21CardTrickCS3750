@@ -30,7 +30,7 @@ The actual project files are in three folders: js, less and views
 Gulp is an immensely powerful front-end build system. I highly recommend the pluralsight course if you're at all interested in front end development
 > http://www.pluralsight.com/courses/javascript-build-automation-gulpjs
 
-John Papa is a great pluralsight resource and I also recommend any of his courses!
+John Papa is a great pluralsight resource and I recommend any of his courses!
 
 If you're not interested in how it works, I'll let you know when I have it up. The syntax to run it will be to open a terminal at the project root and enter
 > gulp

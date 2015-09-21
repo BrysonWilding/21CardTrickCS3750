@@ -1,6 +1,9 @@
-﻿var Column = function(id){
+﻿var Column = function(id, cards){
     this.id = id;
-    this.addCard = function addCard(card){
+    this.cards = cards;
 
-    }
+    this.addCard = function addCard(card){
+        this.cards.push(card);
+        console.log('Adding cards...')
+    };
 };

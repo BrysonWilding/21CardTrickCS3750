@@ -154,3 +154,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+# Bryson added these (﻿ ͡° ͜ʖ ͡°), Just so we know
+.styl
+

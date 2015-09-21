@@ -1,15 +1,9 @@
 ﻿var Dealer = function(){
+
+    var deck = new Deck();
+
     this.deal = function deal(){
-        var row = 0, col = 0, card = 0;
-        for (row = 0; row < 7; row++)
-        {
-            play[row][col] = deck[card];
-            for (col = 0; col < 3; col++)
-            {
-                play[row][col] = deck[card];
-                card++;
-            }
-        }
+        return deck.select21();
     };
     this.revealCard = function revealCard(){
         // It will be cardArray[10], which is the 11th card.
@@ -47,7 +41,7 @@
 
         // I decided to empty the cardArray and we will repopulate it below.
         // If someone has a better idea, please make changes.
-        for(var i = 0); i < 21; i++)
+        for (var i = 0; i < 21; i++)
         {
             cardArray.pop();
         }
