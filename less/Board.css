@@ -1,35 +1,27 @@
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-
 }
-
 .board {
   height: 100%;
   width: 100%;
   background-color: #4fff8a;
   display: flex;
   justify-content: center;
-
+  overflow-y: hidden;
 }
-
-@width: 10vw;
-
 .column0 {
-  width: @width;
+  width: 10vw;
+  margin-top: 15vh;
 }
-
-.column0:first-child {
-  margin: 0;
-}
-
 .column1 {
-  width: @width;
-
+  width: 10vw;
+  margin-top: 15vh;
 }
-
 .column2 {
-  width: @width;
+  width: 10vw;
+  margin-top: 15vh;
 }
