@@ -16,5 +16,3 @@ var Board = function (){
         }
     }
 };
-
-var db = new Board();

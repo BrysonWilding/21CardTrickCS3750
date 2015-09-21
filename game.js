@@ -30,7 +30,7 @@ function game() {
                 face.appendChild(bottomright);
                 front.appendChild(face);
 
-                domCard.style.top = - (card * 7.5) + 'vh';
+                domCard.style.top = - (card * 7.5) + 'vw';
 
                 domColumn.appendChild(domCard);
 
