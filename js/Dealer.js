@@ -5,14 +5,14 @@
     this.deal = function deal(){
         return deck.select21();
     };
+    
     this.revealCard = function revealCard(){
-        // It will be cardArray[10], which is the 11th card.
-        // For the view, it is the second column, 4th row.
-        pop(cardArray[10]);
+        // It is the 11th card, which is the second column, 4th row.
+         return board.playcards[1][3];
     };
+    
     this.pickupCards = function pickupCards(column){
-        // This needs to know the column that needs to go in the middle.
-        // For now I will just assume that it is an incoming parameter.
+        // The column parameter is how it know which column was chosen by the player.
         // The columns are "left", "middle", and "right"
         // Whatever the incoming parameter is will become the new middle.
         // Left is 0, 3, 6, 9, 12, 15, 18
@@ -21,79 +21,104 @@
 
         // This can get confusing (at least for me) so I am making copies.
         // As the cards are placed left to right, row by row, the order matters.
+        // First copy the current columns.
         var tempLeft = [];
-        for (var i = 0; i < 18; i += 3)
-        {
-            tempLeft.push(cardArray[i]);
-        }
-
         var tempMid = [];
-        for (var i = 1; i < 19; i += 3)
-        {
-            tempMid.push(cardArray[i]);
-        }
-
         var tempRight = [];
-        for (var i = 2; i < 20; i += 3)
+
+        for (var i = 0; i < 7; i ++)
         {
-            tempRight.push(cardArray[i]);
+            tempLeft.push(board.playcards[0][i]);
+            tempMid.push(board.playcards[1][i]);
+            tempRight.push(board.playcards[2][i]);
         }
 
         // I decided to empty the cardArray and we will repopulate it below.
         // If someone has a better idea, please make changes.
-        for (var i = 0; i < 21; i++)
+        for (var i = 0; i < 7; i++)
         {
-            cardArray.pop();
+            board.playcards[0].pop();
+            board.playcards[1].pop();
+            board.playcards[2].pop();
         }
 
-        // Left needs to become the middle.
-        // It trades places with what is currently middle.
+        // Left needs to become the middle of the deck.
         if(column == "left")
         {
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempMid[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempLeft[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempRight[j]);
-            }
+            // A loop was considered but my tired mind did not think of one.
+            board.playcards[0].push(tempMid[0]);
+            board.playcards[1].push(tempMid[1]);
+            board.playcards[2].push(tempMid[2]);
+            board.playcards[0].push(tempMid[3]);
+            board.playcards[1].push(tempMid[4]);
+            board.playcards[2].push(tempMid[5]);
+            board.playcards[0].push(tempMid[6]);
+            board.playcards[1].push(tempLeft[0]);
+            board.playcards[2].push(tempLeft[1]);
+            board.playcards[0].push(tempLeft[2]);
+            board.playcards[1].push(tempLeft[3]);
+            board.playcards[2].push(tempLeft[4]);
+            board.playcards[0].push(tempLeft[5]);
+            board.playcards[1].push(tempLeft[6]);
+            board.playcards[2].push(tempRight[0]);
+            board.playcards[0].push(tempRight[1]);
+            board.playcards[1].push(tempRight[2]);
+            board.playcards[2].push(tempRight[3]);
+            board.playcards[0].push(tempRight[4]);
+            board.playcards[1].push(tempRight[5]);
+            board.playcards[2].push(tempRight[6]);
         }
 
         if(column == "middle")
         {
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempLeft[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempMid[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempRight[j]);
-            }
+            board.playcards[0].push(tempLeft[0]);
+            board.playcards[1].push(tempLeft[1]);
+            board.playcards[2].push(tempLeft[2]);
+            board.playcards[0].push(tempLeft[3]);
+            board.playcards[1].push(tempLeft[4]);
+            board.playcards[2].push(tempLeft[5]);
+            board.playcards[0].push(tempLeft[6]);
+            board.playcards[1].push(tempMid[0]);
+            board.playcards[2].push(tempMid[1]);
+            board.playcards[0].push(tempMid[2]);
+            board.playcards[1].push(tempMid[3]);
+            board.playcards[2].push(tempMid[4]);
+            board.playcards[0].push(tempMid[5]);
+            board.playcards[1].push(tempMid[6]);
+            board.playcards[2].push(tempRight[0]);
+            board.playcards[0].push(tempRight[1]);
+            board.playcards[1].push(tempRight[2]);
+            board.playcards[2].push(tempRight[3]);
+            board.playcards[0].push(tempRight[4]);
+            board.playcards[1].push(tempRight[5]);
+            board.playcards[2].push(tempRight[6]);
         }
 
-        // Right needs to become the middle.
+        // Right needs to become the middle of the deck.
         // It trades places with the current middle.
         if(column == "right")
         {
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempLeft[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempRight[j]);
-            }
-
-            for (var j = 0; j < 7; j++) {
-                cardArray.push(tempMid[j]);
-            }
-        }
+            board.playcards[0].push(tempLeft[0]);
+            board.playcards[1].push(tempLeft[1]);
+            board.playcards[2].push(tempLeft[2]);
+            board.playcards[0].push(tempLeft[3]);
+            board.playcards[1].push(tempLeft[4]);
+            board.playcards[2].push(tempLeft[5]);
+            board.playcards[0].push(tempLeft[6]);
+            board.playcards[1].push(tempRight[0]);
+            board.playcards[2].push(tempRight[1]);
+            board.playcards[0].push(tempRight[2]);
+            board.playcards[1].push(tempRight[3]);
+            board.playcards[2].push(tempRight[4]);
+            board.playcards[0].push(tempRight[5]);
+            board.playcards[1].push(tempRight[6]);
+            board.playcards[2].push(tempMid[0]);
+            board.playcards[0].push(tempMid[1]);
+            board.playcards[1].push(tempMid[2]);
+            board.playcards[2].push(tempMid[3]);
+            board.playcards[0].push(tempMid[4]);
+            board.playcards[1].push(tempMid[5]);
+            board.playcards[2].push(tempMid[6]);
     }
 };
 
