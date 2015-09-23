@@ -14,6 +14,7 @@
         return cardArray;
     }
 
+    //Calls shuffle method and deals out the first 21 cards. 
     this.select21 = function(){
         this.shuffle();
         var playCards = [];
