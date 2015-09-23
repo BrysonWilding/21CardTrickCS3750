@@ -2,6 +2,7 @@
 
     var deck = new Deck();
 
+    //Calls the deck.js function and only deals the first 21 cards
     this.deal = function deal(){
         return deck.select21();
     };
