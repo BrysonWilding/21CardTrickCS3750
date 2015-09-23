@@ -13,15 +13,8 @@ html {
   justify-content: center;
   overflow-y: hidden;
 }
-.column0 {
-  width: 10vw;
+.column {
+  width: 10%;
   margin-top: 15vh;
-}
-.column1 {
-  width: 10vw;
-  margin-top: 15vh;
-}
-.column2 {
-  width: 10vw;
-  margin-top: 15vh;
+  position: relative;
 }

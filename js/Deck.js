@@ -1,4 +1,4 @@
-﻿var Deck = function () {
+﻿﻿var Deck = function () {
     var cardArray = [];
 
     //initializes a brand new deck and shuffles it
@@ -14,15 +14,14 @@
         return cardArray;
     }
 
-    //Calls shuffle method and deals out the first 21 cards. 
     this.select21 = function(){
         this.shuffle();
-        var playCards = [];
+        var playcards = [];
         for (var i = 0; i < 3; i++){
             for (var j = 0; j < 7; j++)
-                playCards.push(cardArray[i * 7 + j]);
+                playcards.push(cardArray[i * 7 + j]);
         }
-        return playCards;
+        return playcards;
     };
 
     //shuffles the card array
@@ -46,5 +45,4 @@
 
     //init new instance of deck
     this.cards = initCards();
-    this.shuffle();
 };

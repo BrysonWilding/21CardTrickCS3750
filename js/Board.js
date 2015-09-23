@@ -1,19 +1,28 @@
 var Board = function (){
 
+    //Members Vars
     this.columns = [];
-    this.deck = new Deck();
-    var playcards = this.deck.select21();
+    var dealer = new Dealer();
 
-    // Adds cards to the game board in 3 columns of 7
-    for (var x = 0; x < 3; x++){
-        var col = new Column(x, playcards.slice(x * 7, (x + 1) * 7));
-        this.columns.push(col);
-    }
-
-    this.addToColumn = function addToColumn(columnid, card){
-        for (var column in columns) {
-            if (column.id = columnid)
-                column.addCard(card);
+    this.makeColumns = function(arr){
+        var columns = [];
+        for (var x = 0; x < 3; x++){
+            var col = new Column(x, arr.slice(x * 7, (x + 1) * 7));
+            columns.push(col);
         }
+        return columns;
     }
+
+    this.pickupcards = function(columns, selected){
+        return dealer.pickupCards(columns, selected);
+    };
+
+    this.showCards = function(columns){
+        console.log(dealer.revealCard(columns))
+        return dealer.revealCard(columns);
+    }
+
+    //Init
+    this.columns = this.makeColumns(dealer.deal());
+
 };
