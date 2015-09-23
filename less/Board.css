@@ -18,3 +18,20 @@ html {
   margin-top: 15vh;
   position: relative;
 }
+.finalCard {
+  margin: 20vh auto;
+  height: 20vw !important;
+  width: 14vw !important;
+}
+.finalCard .topleft, .finalCard .bottomright{
+  font-size: 2.5vw !important;
+}
+.finalCard .topleft{
+  left: 1vw !important;
+}
+.finalCard .bottomright{
+  right: 1.2vw !important;
+  transform: rotate(180deg) translate(-50%, -14.5vw) !important;
+}
+
+

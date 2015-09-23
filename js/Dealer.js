@@ -15,7 +15,7 @@
         //    }
         //}
         // return column[10];
-        console.log(columns)
+        console.log(columns[1].cards[3])
         return columns[1].cards[3];
     };
     

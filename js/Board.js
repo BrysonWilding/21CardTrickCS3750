@@ -18,7 +18,6 @@ var Board = function (){
     };
 
     this.showCards = function(columns){
-        console.log(dealer.revealCard(columns))
         return dealer.revealCard(columns);
     }
 

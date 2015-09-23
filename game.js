@@ -97,12 +97,34 @@ function game() {
         fan();
         tries++;
         if(tries >= 3){
-            console.log(showCard(board.showCards(board.columns)));
-        }
-    }
+            var yourCard = board.showCards(board.columns);
+            var domCard = document.createElement('div');
+            var face = document.createElement('div');
+            var front = document.createElement('div');
+            var back = document.createElement('div');
+            var topleft = document.createElement('div');
+            var bottomright = document.createElement('div');
+            domCard.classList.add('card');
+            domCard.classList.add('finalCard');
+            face.classList.add('face');
+            front.classList.add('front', yourCard.suit.toLowerCase(), yourCard.suit.toLowerCase() + yourCard.value);
+            back.classList.add('back');
+            topleft.classList.add('topleft');
+            topleft.textContent = yourCard.face;
+            bottomright.classList.add('bottomright');
+            bottomright.textContent = yourCard.face;
 
-    this.view = function(){
-        return board.columns;
+            domCard.appendChild(front);
+            domCard.appendChild(back);
+            face.appendChild(topleft);
+            face.appendChild(bottomright);
+            front.appendChild(face);
+
+            destroyCards();
+
+            domBoard.appendChild(domCard);
+
+        }
     }
 };
 
