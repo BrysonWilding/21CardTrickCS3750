@@ -16,12 +16,12 @@
 
     this.select21 = function(){
         this.shuffle();
-        var playcards = [];
+        var playCards = [];
         for (var i = 0; i < 3; i++){
             for (var j = 0; j < 7; j++)
-                playcards.push(cardArray[i * 7 + j]);
+                playCards.push(cardArray[i * 7 + j]);
         }
-        return playcards;
+        return playCards;
     };
 
     //shuffles the card array
@@ -45,5 +45,5 @@
 
     //init new instance of deck
     this.cards = initCards();
-    //this.shuffle();
+    this.shuffle();
 };

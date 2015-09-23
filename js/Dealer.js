@@ -2,13 +2,14 @@
 
     var deck = new Deck();
 
+    var dealNumber =0;
     this.deal = function deal(){
         return deck.select21();
     };
-    
+    var playCards= this.deal();
     this.revealCard = function revealCard(){
         // It is the 11th card, which is the second column, 4th row.
-         return board.playcards[1][3];
+         return playCards[1,3];
     };
     
     this.pickupCards = function pickupCards(column){
@@ -25,100 +26,99 @@
         var tempLeft = [];
         var tempMid = [];
         var tempRight = [];
-
-        for (var i = 0; i < 7; i ++)
+/*      NOT SURE IF THIS IS NEEDED
+        for (var i = 0; i < 18; i += 3)
         {
-            tempLeft.push(board.playcards[0][i]);
-            tempMid.push(board.playcards[1][i]);
-            tempRight.push(board.playcards[2][i]);
+            tempLeft.push(playCards[i]);
         }
 
-        // I decided to empty the cardArray and we will repopulate it below.
+        for (var i = 1; i < 19; i += 3)
+        {
+            tempMid.push(playCards[i]);
+        }
+
+        for (var i = 2; i < 20; i += 3)
+        {
+            tempMid.push(playCards[i]);
+        }
+
+        // I decided to empty the playCards and we will repopulate it below.
         // If someone has a better idea, please make changes.
-        for (var i = 0; i < 7; i++)
+        for (i = 0; i < 7; i++)
         {
-            board.playcards[0].pop();
-            board.playcards[1].pop();
-            board.playcards[2].pop();
+            playCards[0].pop();
+            playCards[1].pop();
+            playCards[2].pop();
         }
-
+ */
         // Left needs to become the middle of the deck.
-        if(column == "left")
+        if(column == 0)
         {
-            // A loop was considered but my tired mind did not think of one.
-            board.playcards[0].push(tempMid[0]);
-            board.playcards[1].push(tempMid[1]);
-            board.playcards[2].push(tempMid[2]);
-            board.playcards[0].push(tempMid[3]);
-            board.playcards[1].push(tempMid[4]);
-            board.playcards[2].push(tempMid[5]);
-            board.playcards[0].push(tempMid[6]);
-            board.playcards[1].push(tempLeft[0]);
-            board.playcards[2].push(tempLeft[1]);
-            board.playcards[0].push(tempLeft[2]);
-            board.playcards[1].push(tempLeft[3]);
-            board.playcards[2].push(tempLeft[4]);
-            board.playcards[0].push(tempLeft[5]);
-            board.playcards[1].push(tempLeft[6]);
-            board.playcards[2].push(tempRight[0]);
-            board.playcards[0].push(tempRight[1]);
-            board.playcards[1].push(tempRight[2]);
-            board.playcards[2].push(tempRight[3]);
-            board.playcards[0].push(tempRight[4]);
-            board.playcards[1].push(tempRight[5]);
-            board.playcards[2].push(tempRight[6]);
+            for(var i=1;i<21;i+=3)
+            {
+                tempLeft.push(playCards[1,i]);
+            }
+            for(i=0;i<21;i+=3)
+            {
+                tempLeft.push(playCards[0,i]);
+            }
+            for(i=2;i<21;i+=3)
+            {
+                tempLeft.push(playCards[2,i]);
+            }
         }
-
-        if(column == "middle")
+        //Middle Column stays the same
+        if(column == 1)
         {
-            board.playcards[0].push(tempLeft[0]);
-            board.playcards[1].push(tempLeft[1]);
-            board.playcards[2].push(tempLeft[2]);
-            board.playcards[0].push(tempLeft[3]);
-            board.playcards[1].push(tempLeft[4]);
-            board.playcards[2].push(tempLeft[5]);
-            board.playcards[0].push(tempLeft[6]);
-            board.playcards[1].push(tempMid[0]);
-            board.playcards[2].push(tempMid[1]);
-            board.playcards[0].push(tempMid[2]);
-            board.playcards[1].push(tempMid[3]);
-            board.playcards[2].push(tempMid[4]);
-            board.playcards[0].push(tempMid[5]);
-            board.playcards[1].push(tempMid[6]);
-            board.playcards[2].push(tempRight[0]);
-            board.playcards[0].push(tempRight[1]);
-            board.playcards[1].push(tempRight[2]);
-            board.playcards[2].push(tempRight[3]);
-            board.playcards[0].push(tempRight[4]);
-            board.playcards[1].push(tempRight[5]);
-            board.playcards[2].push(tempRight[6]);
+            for(i=0;i<21;i+=3)
+            {
+                tempMid.push(playCards[0,i]);
+            }
+            for(i=1;i<21;i+=3)
+            {
+                tempMid.push(playCards[1,i]);
+            }
+            for(i=2;i<21;i+=3)
+            {
+                tempMid.push(playCards[2,i]);
+            }
         }
 
         // Right needs to become the middle of the deck.
         // It trades places with the current middle.
-        if(column == "right")
+        if(column == 2)
         {
-            board.playcards[0].push(tempLeft[0]);
-            board.playcards[1].push(tempLeft[1]);
-            board.playcards[2].push(tempLeft[2]);
-            board.playcards[0].push(tempLeft[3]);
-            board.playcards[1].push(tempLeft[4]);
-            board.playcards[2].push(tempLeft[5]);
-            board.playcards[0].push(tempLeft[6]);
-            board.playcards[1].push(tempRight[0]);
-            board.playcards[2].push(tempRight[1]);
-            board.playcards[0].push(tempRight[2]);
-            board.playcards[1].push(tempRight[3]);
-            board.playcards[2].push(tempRight[4]);
-            board.playcards[0].push(tempRight[5]);
-            board.playcards[1].push(tempRight[6]);
-            board.playcards[2].push(tempMid[0]);
-            board.playcards[0].push(tempMid[1]);
-            board.playcards[1].push(tempMid[2]);
-            board.playcards[2].push(tempMid[3]);
-            board.playcards[0].push(tempMid[4]);
-            board.playcards[1].push(tempMid[5]);
-            board.playcards[2].push(tempMid[6]);
+            for(i=1;i<21;i+=3)
+            {
+                tempRight.push(playCards[1,i]);
+            }
+            for(i=2;i<21;i+=3)
+            {
+                tempRight.push(playCards[2,i]);
+            }
+            for(i=0;i<21;i+=3)
+            {
+                tempRight.push(playCards[0,i]);
+            }
+        }
+        //Adding cards back into array.
+        playCards=null;
+        for (j = 0; j < 7; j++) {
+            playCards.push(tempLeft[j]);
+        }
+        for (j = 0; j < 7; j++) {
+            playCards.push(tempMid[j]);
+        }
+        for (j = 0; j < 7; j++) {
+            playCards.push(tempRight[j]);
+        }
+    };
+    var dealer = new Dealer();
+    dealer.deal();
+    for (i=0; i<3; i++) {
+        console.log("Player needs to pick a column.");
+        dealer.pickupCards();
     }
+    dealer.revealCard();
 };
 

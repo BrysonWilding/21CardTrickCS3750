@@ -44,6 +44,7 @@ function game() {
 
     this.reset =  function(){
     // Figure this out later... I mean TODO: Figure this out or remove it
+
         alert("Not implemented yet!");
 
     }
